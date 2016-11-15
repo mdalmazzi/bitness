@@ -1,0 +1,145 @@
+<div *ngIf="hero" class="form-horizontal">
+	<h2>{{hero.name}} details!</h2>
+	<div class="form-group">
+		<div *ngIf="!newHero">
+			<label class="col-sm-2 control-label">id: </label>
+			<div class="col-sm-10">
+				{{hero._id}}
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Titolo Slide </label>
+		<div class="col-sm-10">
+			<input class="form-control" [(ngModel)]="hero.name" placeholder="name" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Domanda </label>
+		<div class="col-sm-10">
+			<input class="form-control" [(ngModel)]="hero.domanda" placeholder="domanda" />
+		</div>
+	</div>
+
+
+	<div *ngIf="!newHero">
+		<div [ngSwitch]="hero.risposte.length">
+			<div *ngSwitchCase=undefined class="form-group">
+				<label class="col-sm-2 control-label">Risposta 1</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+				</div>
+			</div>
+			<div *ngSwitchCase=0 class="form-group">
+				<label class="col-sm-2 control-label">Risposta 1</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+				</div>
+			</div>
+			<div *ngSwitchCase=1 class="form-group">
+				<label class="col-sm-2 control-label">Risposta 1</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 2</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[1]" placeholder="risposta2" />
+				</div>
+			</div>
+			<div *ngSwitchCase=2 class="form-group">
+				<label class="col-sm-2 control-label">Risposta 1</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 2</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[1]" placeholder="risposta2" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 3</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[2]" placeholder="risposta3" />
+				</div>
+			</div>
+			<div *ngSwitchCase=3 class="form-group">
+				<label class="col-sm-2 control-label">Risposta 1</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 2</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[1]" placeholder="risposta2" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 3</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[2]" placeholder="risposta3" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 4</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[3]" placeholder="risposta4" />
+				</div>
+			</div>
+			<div *ngSwitchCase=4 class="form-group">
+				<label class="col-sm-2 control-label">Risposta 1</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 2</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[1]" placeholder="risposta2" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 3</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[2]" placeholder="risposta3" />
+				</div>
+				<label class="col-sm-2 control-label">Risposta 4</label>
+				<div class="col-sm-10">
+
+					<input class="form-control" [(ngModel)]="hero.risposte[3]" placeholder="risposta4" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="newHero">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Risposta 1</label>
+			<div class="col-sm-10">
+				<input class="form-control" [(ngModel)]="hero.risposte[0]" placeholder="risposta1" />
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Power: </label>
+		<div class="col-sm-10">
+			<input class="form-control" [(ngModel)]="hero.power" placeholder="power" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Amount People Saved: </label>
+		<div class="col-sm-10">
+			<input class="form-control" [(ngModel)]="hero.amountPeopleSaved" placeholder="amountPeopleSaved" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button (click)="goBack()" class="btn btn-default">Back</button>
+			<button (click)="save()" class="btn btn-primary">Save</button>
+			<button (click)="addHero()" class="btn btn-primary">Add</button>
+		</div>
+	</div>
+</div>
